@@ -1,0 +1,153 @@
+.mainContactContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 0px 0px 150px 0;
+    color: white;
+}
+
+.buttonImgGU {
+    cursor: pointer;
+    position: absolute;
+    right: 100px;
+    margin-top: -90px;
+}
+
+.d-none {
+    display: none;
+}
+
+.errorMessage {
+    font-size: 14px;
+    color: red;
+}
+
+.lineHDiv {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+}
+
+.lineContact {
+    border: 2px solid rgba(75, 71, 255, 1);
+    width: 50px;
+}
+
+.Contact {
+    font-weight: 700;
+    font-size: 90px;
+}
+
+.textDown {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.longPText {
+    width: 430px;
+    line-height: 120%;
+}
+
+.textContactMe {
+    width: 473px;
+    line-height: 120%;
+
+    span {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 120%;
+    }
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding-left: 100px;
+    margin-bottom: 178px;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 100px;
+    gap: 16px;
+}
+
+.inputTextarea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    input {
+        width: 617px;
+        padding: 15px 25px;
+        border-radius: 10px;
+        border: 1px solid rgba(75, 71, 255, 1);
+        background-color: transparent;
+        color: white;
+        font-size: 16px;
+    }
+
+    textarea {
+        width: 617px;
+        height: 88px;
+        padding: 15px 25px;
+        border-radius: 10px;
+        border: 1px solid #4B47FF;
+        background-color: transparent;
+        color: white;
+        font-size: 16px;
+    }
+}
+
+.buttonSend {
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 23px;
+    color: white;
+    box-shadow: 4px 4px 4px #00000040;
+    border: 0;
+    text-decoration: none;
+    background-color: rgba(182, 182, 182, 1);
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.boxDiv {
+    display: flex;
+    gap: 12px;
+
+    a {
+        text-decoration: none;
+        color: rgba(75, 71, 255, 1);
+        font-size: 14px;
+
+        &:hover {
+            cursor: pointer;
+            color: rgba(0, 190, 232, 1);
+        }
+    }
+}
+
+.lastImgBlue {
+    position: absolute;
+    margin-top: 350px;
+    z-index: -1;
+    left: 0;
+
+}

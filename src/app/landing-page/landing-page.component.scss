@@ -1,0 +1,151 @@
+.MeContainer {
+    padding-top: 83px;
+}
+
+.mainTextContainerOne {
+    display: flex;
+    align-items: center;
+}
+
+.neighborDiv {
+    display: flex;
+    align-items: center;
+}
+
+.textLeft {
+    transform: rotate(-90deg);
+    font-size: 80px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+.centerDivContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: -155px;
+}
+
+.textName {
+    font-size: 77px;
+    font-weight: 600;
+    color: white;
+}
+
+.colorBlue {
+    color: rgba(75, 71, 255, 1);
+}
+
+.introduceDiv {
+    margin-bottom: 300px;
+    margin-left: -55px;
+}
+
+.animationDivImg {
+    transition: transform 0.1s ease-out;
+    transform: scale(1);
+    display: block;
+    margin: 0 auto;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.talkButton {
+    margin-top: 50px;
+    padding: 15px 30px 15px 30px;
+    margin-bottom: 50px;
+    background-color: #00BEE8;
+    font-size: 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 180px;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        background-color: rgba(75, 71, 255, 1);
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.background-form {
+    width: 100%;
+    height: 40vh;
+    min-height: 300px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.contactContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -100px;
+}
+
+.mainContainerTwo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 42px;
+    z-index: 100;
+}
+
+.blueLine {
+    width: 100px;
+    border: 2px solid rgba(75, 71, 255, 1);
+    height: 0;
+    left: 0;
+}
+
+.gmailStyle {
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+}
+
+.scrollDown {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+    margin-right: 35px;
+    animation: bounce 2s ease-in-out infinite;
+    animation-delay: 1s;
+
+    p {
+        transform: rotate(90deg);
+        font-size: 23px;
+        font-weight: 400;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    10% {
+        transform: translateY(20px);
+    }
+
+    20%, 40% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(20px);
+    }
+}

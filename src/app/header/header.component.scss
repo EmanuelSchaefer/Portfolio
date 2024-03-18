@@ -1,0 +1,39 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 25px 100px;
+    z-index: 1000;
+    width: 88.7vw;
+    background-color: rgba(20, 29, 47, 1);
+
+    a {
+        text-decoration: none;
+    }
+}
+
+h3 {
+    color: white;
+    font-size: 50px;
+    .sOne {
+        color: #4B47FF;
+    }
+    .sTwo {
+        color: rgb(0, 190, 232);
+    }
+}
+
+.navBar {
+    display: flex;
+    gap: 29px;
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 23px;
+    }
+    a:hover {
+        color: rgb(0, 190, 232);
+    }
+}
