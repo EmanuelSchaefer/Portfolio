@@ -1,0 +1,320 @@
+.MeContainer {
+    padding-top: 83px;
+}
+
+.emanuelImgOne {
+    position: absolute;
+    height: 635px;
+    width: 953px;
+    top: 83px;
+    left: -95px;
+}
+
+.mainTextContainerOne {
+    display: flex;
+    align-items: center;
+}
+
+.neighborDiv {
+    display: flex;
+    align-items: center;
+}
+
+.textLeft {
+    transform: rotate(-90deg);
+    font-size: 80px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+.centerDivContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: -155px;
+}
+
+.textName {
+    font-size: 77px;
+    font-weight: 600;
+    color: white;
+}
+
+.colorBlue {
+    color: rgba(75, 71, 255, 1);
+    font-weight: 400;
+}
+
+.introduceDiv {
+    margin-bottom: 300px;
+    margin-left: -55px;
+}
+
+.animationDivImg {
+    display: block;
+    margin: 0 auto;
+}
+
+.talkButton {
+    margin-top: 50px;
+    padding: 15px 30px 15px 30px;
+    margin-bottom: 50px;
+    background-color: #00BEE8;
+    font-size: 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 180px;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        background-color: rgba(75, 71, 255, 1);
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.background-form-container {
+    position: relative;
+    min-height: 300px;
+    height: 50vh;
+    overflow: hidden;
+    margin-top: -374px;
+}
+
+.background-form {
+    width: 100vw;
+    height: 50vh;
+    min-height: 300px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.contactContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -215px;
+}
+
+.mainContainerTwo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 42px;
+    z-index: 100;
+}
+
+.blueLine {
+    width: 100px;
+    border: 2px solid rgba(75, 71, 255, 1);
+    height: 0;
+    left: 0;
+}
+
+.gmailStyle {
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+}
+
+.scrollDown {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+    margin-right: 35px;
+    animation: bounce 2s ease-in-out infinite;
+    animation-delay: 1s;
+
+    p {
+        transform: rotate(90deg);
+        font-size: 23px;
+        font-weight: 400;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    10% {
+        transform: translateY(20px);
+    }
+
+    20%,
+    40% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(20px);
+    }
+}
+
+
+// mobile landing-page scss ON
+@media (max-width: 1669px) {
+    .textLeft {
+        font-size: 60px;
+    }
+
+    .textName {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 1580px) {
+    .textLeft {
+        font-size: 45px;
+    }
+
+    .textName {
+        font-size: 45px;
+    }
+
+    .introduceDiv {
+        margin-left: -50px;
+    }
+}
+
+@media (max-width: 1372px) {
+    .mainTextContainerOne {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        img {
+            margin-right: 61vh;
+        }
+    }
+
+    .background-form {
+        width: 160vw;
+    }
+
+    .introduceDiv {
+        z-index: 111;
+        margin-left: 0px;
+        margin-top: -170px;
+    }
+
+    .mainContainerTwo {
+        margin-top: -135px;
+    }
+
+    .background-form-container {
+        margin-top: -610px;
+    }
+
+    .contactContainer {
+        margin-top: 45px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .mainTextContainerOne {
+        img {
+            margin-right: 33vh;
+        }
+    }
+}
+
+@media (max-width: 870px) {
+    .maxN {
+        display: none;
+    }
+
+    .mainTextContainerOne {
+        img {
+            margin-right: 9vh;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .background-form {
+        width: 235vw;
+    }
+}
+
+@media (max-width: 670px) {
+    .emanuelImgOne {
+        left: -175px;
+        top: 48px;
+    }
+
+    .textName {
+        font-size: 30px;
+    }
+
+    .textLeft {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .emanuelImgOne {
+        left: -250px;
+    }
+}
+
+@media (max-width: 500px) {
+    .scrollDown {
+        display: none;
+    }
+
+    .mainContainerTwo {
+        margin-top: -50px;
+        gap: 32px;
+    }
+
+    .emanuelImgOne {
+        height: 538px;
+        width: 838px;
+        top: 145px;
+        left: -222px;
+    }
+}
+
+@media (max-width: 450px) {
+    .talkButton {
+        margin-right: 50px;
+    }
+
+    .textName {
+        font-size: 21px;
+    }
+
+    .textLeft {
+        font-size: 21px;
+    }
+
+    .emanuelImgOne {
+        top: 123px;
+    }
+}
+
+@media (max-width: 375px) {
+    .background-form-container {
+        margin-top: -500px;
+    }
+
+    .emanuelImgOne {
+        top: 179px;
+        left: -241px;
+    }
+}

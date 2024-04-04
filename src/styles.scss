@@ -3,6 +3,17 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
     background-color: #141d2f;
+    scroll-behavior: smooth;
+}
+
+.content-wrapper {
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
 }

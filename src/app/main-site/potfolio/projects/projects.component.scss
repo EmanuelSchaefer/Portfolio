@@ -1,0 +1,195 @@
+.divLeftRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#divLeftRight.visible .projectImgDiv {
+    animation: slideInFromLeft 2.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+#divLeftRight.visible .projectTextButtonDiv {
+    animation: slideInFromRight 2.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.divLeftRight.reverse {
+    flex-direction: row-reverse;
+}
+
+.projectTextButtonDiv.reverse {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
+}
+
+#divLeftRight.visible.reverse .projectImgDiv {
+    animation: slideInFromRight 3s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+#divLeftRight.visible.reverse .projectTextButtonDiv {
+    animation: slideInFromLeft 3s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.projectImgDiv,
+.projectTextButtonDiv {
+    opacity: 0;
+}
+
+.divLeftRight.reverse {
+    flex-direction: row-reverse;
+}
+
+.projectTextButtonDiv.reverse {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
+}
+
+.projectTextButtonDiv {
+    padding: 0 20px;
+}
+
+.textProjectDiv {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    gap: 15px;
+    margin-top: 23px;
+    margin-bottom: 35px;
+}
+
+.spanName {
+    font-size: 32px;
+    font-weight: 700;
+    color: rgba(75, 71, 255, 1);
+}
+
+.spanLanguages {
+    font-size: 23px;
+    font-weight: 400;
+    color: rgba(0, 190, 232, 1);
+}
+
+.buttonProjectDiv {
+    display: flex;
+    align-items: center;
+    gap: 86px;
+}
+
+.buttonLiveTest {
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 23px;
+    background-color: rgba(75, 71, 255, 1);
+    border: 1px solid rgba(75, 71, 255, 1);
+    cursor: pointer;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    &:hover {
+        background-color: rgba(0, 190, 232, 1);
+    }
+}
+
+.buttonGit {
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 23px;
+    background-color: #141d2f;
+    border: 1px solid rgba(0, 190, 232, 1);
+    cursor: pointer;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    &:hover {
+        background-color: rgba(0, 190, 232, 1);
+    }
+}
+
+
+// mobile projcts scss ON
+@media (max-width: 1200px) {
+    .textProjectDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .projectTextButtonDiv {
+        margin-top: -100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .divLeftRight {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .divLeftRight.reverse {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .projectTextButtonDiv.reverse {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 630px) {
+    .projectImgDiv {
+        img {
+            max-width: 100vw;
+            min-width: 100vw;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .buttonProjectDiv {
+        gap: 2px;
+    }
+}

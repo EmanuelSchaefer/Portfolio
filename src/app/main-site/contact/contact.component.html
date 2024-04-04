@@ -1,0 +1,63 @@
+<div class="mainContactContainer" id="contact">
+    <div class="lineHDiv">
+        <div class="lineContact"></div>
+        <span class="Contact">Contact</span>
+    </div>
+
+    <div class="space-between">
+        <div class="textContainer">
+            <span class="textDown">Got a problem to solve?</span>
+            <p class="longPText">
+                Contact me through this from, I am interested in hearing from you, knowing your ideas and contributing
+                to
+                your projects with my work.
+            </p>
+            <p class="textContactMe">
+                Need a Frontend developer? <span>Contact me!</span>
+            </p>
+        </div>
+
+        <img class="lastImgBlue" src="/assets/img/D. blue 3 footer.png">
+
+        <div class="rightContainer">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                <div class="inputTextarea">
+                    <div class="divCenter">
+                        <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name"
+                            placeholder="Your name" name="name" required minlength="5">
+                        <div [class.d-none]="name.valid || !name.touched" class="errorMessage">
+                            A name is required and must be at least 5 characters long.
+                        </div>
+                    </div>
+                    <div class="divCenter">
+                        <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email"
+                            placeholder="Your email" name="email" required
+                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                        <div [class.d-none]="email.valid || !email.touched" class="errorMessage">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+                    <div class="divCenter">
+                        <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message"
+                            placeholder="Your message" name="message" required minlength="10"></textarea>
+                        <div [class.d-none]="message.valid || !message.touched" class="errorMessage">
+                            Please enter a message with at least 10 characters.
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="boxDiv">
+                <input type="checkbox" class="checkboxS" [(ngModel)]="contactData.agreed" name="agreed" required>
+                <p>I've read the <a (click)="dataProtection()">privacy policy</a> and agree to the processing of my data
+                    as outlined</p>
+            </div>
+            <div class="buttonSend" [class.buttonActive]="contactForm.valid && contactData.agreed"
+                (click)="contactForm.valid && contactData.agreed && onSubmit(contactForm)">
+                Send message :)
+            </div>
+        </div>
+    </div>
+</div>
+<a href="#landing-page">
+    <img class="buttonImgGU" src="/assets/img/Go up button.png" alt="Go up">
+</a>

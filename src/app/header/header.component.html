@@ -1,5 +1,5 @@
 <header id="header">
-    <a href="#startP">
+    <a href="#landing-page">
         <h3><span class="sOne">E</span>manu<span class="sTwo">e</span>l</h3>
     </a>
     <div class="navBar">
@@ -7,4 +7,20 @@
         <a href="#mySkills">Skills</a>
         <a href="#portfolio">Portfolio</a>
     </div>
+    <img (click)="mobileNav()" class="mobileImg d-none" src="/assets/imgMobile/burger menu.png">
+
+    <div class="mobileNav" [ngClass]="{'d-none': !isMobileNavVisible}">
+        <a class="aClass" href="#aboutMe" (click)="closeMobileNav()">
+            <span>About me</span>
+        </a>
+        <a class="aClass" href="#mySkills" (click)="closeMobileNav()">
+            <span>Skills</span>
+        </a>
+        <a class="aClass" href="#portfolio" (click)="closeMobileNav()">
+            <span>Portfolio</span>
+        </a>
+        <a class="aClass" href="#contact" (click)="closeMobileNav()">
+            <span>Contact</span>
+        </a>
+    </div> 
 </header>

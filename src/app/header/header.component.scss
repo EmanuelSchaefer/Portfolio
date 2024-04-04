@@ -16,9 +16,11 @@ header {
 h3 {
     color: white;
     font-size: 50px;
+
     .sOne {
         color: #4B47FF;
     }
+
     .sTwo {
         color: rgb(0, 190, 232);
     }
@@ -33,7 +35,91 @@ h3 {
         color: white;
         font-size: 23px;
     }
+
     a:hover {
         color: rgb(0, 190, 232);
+    }
+}
+
+.mobileImg {
+    cursor: pointer;
+}
+
+.mobileNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: calc(100vh - 118px);
+    width: 100%;
+    top: 100px;
+    left: 0;
+    background-color: #141d2fb3;
+    backdrop-filter: blur(3px);
+
+    span {
+        color: white;
+        font-weight: 700;
+        font-size: 40px;
+
+        &:hover {
+            color: rgb(0, 190, 232);
+        }
+    }
+}
+
+.aClass {
+    margin-bottom: 30px;
+}
+
+.d-none {
+    display: none;
+}
+
+
+// mobile SCSS
+@media (max-width: 1669px) {
+    header {
+        padding: 25px 86px;
+    }
+}
+
+@media (max-width: 1300px) {
+    header {
+        padding: 25px 65px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .navBar {
+        display: none;
+    }
+
+    .mobileImg {
+        display: block;
+        object-fit: cover;
+    }
+
+    header {
+        padding: 25px 48px;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 25px 31px;
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        padding: 25px 23px;
+    }
+}
+
+@media (max-width: 320px) {
+    header {
+        padding: 25px 10px;
     }
 }

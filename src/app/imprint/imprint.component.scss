@@ -1,0 +1,157 @@
+// Imprint ON
+.mainImprintContainer {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 944px;
+}
+
+.boxImprint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    gap: 35px;
+
+    span {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 23px;
+    }
+}
+
+h1 {
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.dreiDiv {
+    font-size: 23px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.zweiDiv {
+    font-size: 23px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.aDiv {
+    a {
+        text-decoration: none;
+        color: rgb(0, 190, 232);
+    }
+}
+
+.kontakt {
+    margin-right: 242px;
+}
+
+.scrollToDp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(90deg);
+    font-size: 23px;
+    font-weight: 400;
+    color: white;
+    position: absolute;
+    right: 0;
+    gap: 10px;
+    margin-top: -130px;
+    animation: bounceDownAdjusted 2s ease-in-out infinite;
+    animation-delay: 1s;
+
+    img {
+        transform: rotate(-90deg);
+        object-fit: cover;
+    }
+}
+
+@keyframes bounceDownAdjusted {
+    0%, 20%, 50%, 80%, 100% {
+        transform: rotate(90deg) translateX(0);
+    }
+    40% {
+        transform: rotate(90deg) translateX(30px);
+    }
+    60% {
+        transform: rotate(90deg) translateX(15px);
+    }
+}
+
+@media (max-width: 900px) {
+    .scrollToDp {
+        font-size: 16px;
+        margin-top: -100px;
+    }
+}
+
+@media (max-width: 622px) {
+    .boxImprint {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: 100px;
+        gap: 35px;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    .boxImprint {
+        margin-left: 45px;
+
+        span {
+            font-size: 23px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 378px) {
+    .boxImprint {
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+// Imprint OFF
+
+
+// DataProtection ON
+.mainDataProtectionContainer {
+    color: white;
+    margin-top: 103px;
+    margin-bottom: 103px;
+    width: 50%;
+    margin-left: 500px;
+}
+
+.boxDataProtection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
+}
+
+// DataProtection OFF

@@ -1,0 +1,182 @@
+.About-Me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 180px;
+    color: white;
+    overflow-x: hidden;
+}
+
+.rightDiv-img {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    margin-top: -100px;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.right-img {
+    position: relative;
+    width: 572px;
+    height: 608px;
+    right: -300px;
+}
+
+.leftDiv-Text {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: -100px;
+    padding-left: 100px;
+    gap: 35px;
+    transform: translateX(-100%);
+    opacity: 0;
+
+    span {
+        font-size: 88px;
+        font-weight: 700;
+        line-height: 120%;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#aboutMe.visible .leftDiv-Text {
+    animation: slideInFromLeft 2.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+#aboutMe.visible .rightDiv-img {
+    animation: slideInFromRight 2.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.divCenter {
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+.divBelow {
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+.mainLongText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 444px;
+    gap: 35px;
+    font-size: 16px;
+    line-height: 120%;
+}
+
+.lineForImg {
+    position: absolute;
+    right: 0;
+    width: 450px;
+    height: 0;
+    border: 2px solid rgba(0, 190, 232, 1);
+    margin-top: -225px;
+}
+
+.profileImg {
+    object-position: top;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #00bee8;
+    width: 453px;
+    height: 453px;
+}
+
+.profileDiv {
+    margin-right: -120px;
+
+    .profileImg {
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+
+        img.emanuelImgTwo {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            position: relative;
+            top: -90px;
+        }
+    }
+}
+
+
+// mobile about-me scss ON
+@media (max-width: 1600px) {
+    .lineForImg {
+        width: 300px;
+    }
+
+    .profileDiv {
+        margin-right: -272px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .lineForImg {
+        width: 190px;
+    }
+
+    .profileDiv {
+        margin-right: -380px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .profileDiv {
+        display: none;
+    }
+
+    .leftDiv-Text {
+        z-index: 111;
+    }
+}
+
+@media (max-width: 630px) {
+    .leftDiv-Text {
+        margin: 0 auto;
+        padding-left: 0px;
+
+        span {
+            font-size: 45px;
+        }
+    }
+
+    .mainLongText {
+        width: 278px;
+    }
+}
