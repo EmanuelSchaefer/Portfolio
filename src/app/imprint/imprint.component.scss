@@ -138,20 +138,45 @@ h1 {
 
 
 // DataProtection ON
+.hOneDz {
+    font-size: 70px;
+    font-weight: 700;
+}
+
 .mainDataProtectionContainer {
     color: white;
+    display: flex;
+    text-align: start;
     margin-top: 103px;
     margin-bottom: 103px;
-    width: 50%;
-    margin-left: 500px;
+    padding: 0px 100px 0px;
+    font-size: 1.5em;
 }
 
 .boxDataProtection {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     gap: 35px;
 }
 
+@media (max-width: 955px) {
+    .hOneDz {
+        font-size: 35px;
+    }
+    
+    .mainDataProtectionContainer {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 585px) {
+    .hOneDz {
+        font-size: 25px;
+    }
+
+    .mainDataProtectionContainer {
+        font-size: 16px;
+        padding: 0px 13px 0px;
+    }
+}
 // DataProtection OFF

@@ -71,7 +71,13 @@ export class ContactComponent implements AfterViewInit {
 
   dataProtection() {
     this.router.navigateByUrl('/imprint').then(() => {
-      window.scrollTo(0, document.body.scrollHeight);
+      setTimeout(() => {
+        const element = document.getElementById('hOneDz');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.scrollBy(0, -1300);
+        }
+      }, 0);
     });
   }
 
