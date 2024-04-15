@@ -1,23 +1,23 @@
 <!--min 4 projekte-->
 <div class="mainProjectsContainer">
     <div class="divLeftRight" id="divLeftRight" [ngClass]="{'reverse': isReverse()}">
-    <div class="projectImgDiv">
-        <img src="/assets/img/{{ projectPicture }}">
-    </div>
-    <div class="projectTextButtonDiv" [ngClass]="{'reverse': isReverse()}">
-        <div class="textProjectDiv">
-            <span class="spanName">{{ projectName }}</span>
-            <span class="spanLanguages">{{ projectLanguages }}</span>
-            <p>{{ projectDescription }}</p>
+        <div class="projectImgDiv">
+            <img src="/assets/img/{{ projectPicture }}">
         </div>
-        <div class="buttonProjectDiv">
-            <div class="buttonLiveTest">
-                <a href="{{ projectLive }}">Live test</a>
+        <div class="projectTextButtonDiv" [ngClass]="{'reverse': isReverse()}">
+            <div class="textProjectDiv">
+                <span class="spanName">{{ projectName }}</span>
+                <span class="spanLanguages">{{ projectLanguages }}</span>
+                <p>{{ projectDescription }}</p>
             </div>
-            <div class="buttonGit">
-                <a href="{{ projectGit }}">Github</a>
+            <div class="buttonProjectDiv">
+                <div class="buttonLiveTest">
+                    <a href="{{ projectLive }}">Live test</a>
+                </div>
+                <div class="buttonGit">
+                    <a href="{{ projectGit }}">Github</a>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </div>

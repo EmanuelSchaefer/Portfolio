@@ -24,6 +24,7 @@
         transform: translateX(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -35,6 +36,7 @@
         transform: translateX(100%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -110,7 +112,7 @@
     text-align: center;
     margin-top: 44px;
     margin-left: 123px;
-    width: 200px;
+    width: 230px;
     height: 58px;
     border-radius: 10px;
     background: rgba(0, 190, 232, 1);

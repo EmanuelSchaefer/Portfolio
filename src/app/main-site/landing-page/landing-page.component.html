@@ -1,8 +1,10 @@
 <section class="MeContainer">
     <div class="mainTextContainerOne" id="landing-page">
 
-        <img src="/assets/img/Photo shadows.png">
-        <img class="emanuelImgOne" src="/assets/img/IMG_6501.png">
+        <div class="bildMargin">
+            <img class="backgroundImgEl" src="/assets/img/Photo shadows.png">
+            <img class="emanuelImgOne" src="/assets/img/IMG_6501.png">
+        </div>
 
         <div class="introduceDiv">
             <div class="neighborDiv">
@@ -15,7 +17,8 @@
                         <span class="colorBlue">FRONTEND DEVELOPER</span>
                     </div>
                     <div class="talkButton">
-                        <a href="#contact">Let's talk!</a>
+                        <a href="#contact"
+                            (click)="letsTalkSection($event, 'contact')">{{translationService.getTranslation('LetsTalk')}}</a>
                     </div>
                 </div>
             </div>

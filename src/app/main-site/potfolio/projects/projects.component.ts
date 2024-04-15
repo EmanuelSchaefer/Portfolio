@@ -9,13 +9,22 @@ import { CommonModule } from '@angular/common';
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent implements AfterViewInit {
+
+  /**
+   * Initializes the component with an element reference injector.
+   * @param el Reference to the element of the component.
+   */
   constructor(private el: ElementRef) { }
 
+  /**
+   * Sets an observer on the project item to control animations upon visibility.
+   */
   ngAfterViewInit() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         } else {
           entry.target.classList.remove('visible');
         }
@@ -34,6 +43,10 @@ export class ProjectsComponent implements AfterViewInit {
   @Input() projectGit?: string;
   @Input() index?: number;
 
+  /**
+   * Determines whether the project layout should be reversed based on the index number.
+   * @returns {boolean} True if the index is odd.
+   */
   isReverse(): boolean {
     return Boolean(this.index && this.index % 2 !== 0);
   }

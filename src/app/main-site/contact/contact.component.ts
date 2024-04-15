@@ -2,6 +2,7 @@ import { Component, inject, AfterViewInit, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { TranslationService } from '../../translation.service';
 
 @Component({
   selector: 'app-contact',
@@ -11,25 +12,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements AfterViewInit {
-  constructor(private el: ElementRef, private router: Router) { }
+  constructor(private el: ElementRef, private router: Router, public translationService: TranslationService) { }
 
-  ngAfterViewInit() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        } else {
-          entry.target.classList.remove('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    const contactElement = this.el.nativeElement.querySelector('#contact');
-    observer.observe(contactElement);
-  }
-
-  http = inject(HttpClient);
-
+  // Contact form data initialization.
   contactData = {
     name: "",
     email: "",
@@ -39,8 +24,11 @@ export class ContactComponent implements AfterViewInit {
 
   mailTest = true;
 
+  http = inject(HttpClient);
+
+  // for the POST request.
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://emanuel-portfolio.netlify.app/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -50,6 +38,10 @@ export class ContactComponent implements AfterViewInit {
     },
   };
 
+  /**
+   * Processes the submission of the contact form.
+   * @param ngForm Reference to the Angular form.
+   */
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
@@ -69,16 +61,53 @@ export class ContactComponent implements AfterViewInit {
     }
   }
 
+  /**
+   * Navigates to the privacy page and scrolls to the specified id.
+   */
   dataProtection() {
     this.router.navigateByUrl('/imprint').then(() => {
       setTimeout(() => {
-        const element = document.getElementById('hOneDz');
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          window.scrollBy(0, -1300);
+        const targetElement = document.getElementById('minScroll');
+        if (targetElement) {
+          const yOffset = this.calculateDynamicOffset() + 100;
+          const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - yOffset;
+
+          window.scrollTo({ top: yPosition, behavior: 'smooth' });
         }
       }, 0);
     });
+  }
+
+  /**
+   * Calculates dynamic offset based on navigation bar height.
+   * @returns {number} The calculated offset value.
+   */
+  calculateDynamicOffset(): number {
+    const navbar = document.getElementById('hOneDz') as HTMLElement;
+    if (navbar) {
+      return navbar.offsetHeight;
+    } else {
+      return 0;
+    }
+  }
+
+  /**
+   * Initializes an observer for the contact section to animate upon entry into the viewport.
+   */
+  ngAfterViewInit() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const contactElement = this.el.nativeElement.querySelector('#contact');
+    observer.observe(contactElement);
   }
 
 }

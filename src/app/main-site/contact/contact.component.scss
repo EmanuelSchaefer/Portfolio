@@ -82,6 +82,7 @@
         transform: translateX(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -93,6 +94,7 @@
         transform: translateX(100%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -233,7 +235,13 @@
 
 @media (max-width: 770px) {
     .boxDiv {
-        width: 58vw;
+        width: 74vw;
+    }
+}
+
+@media (max-width: 660px) {
+    .textContainer {
+        width: 88%;
     }
 }
 

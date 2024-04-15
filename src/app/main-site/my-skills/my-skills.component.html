@@ -44,12 +44,13 @@
     <img class="img-blueSkills" src="/assets/img/L. blue 1.png">
     <div class="leftSkill-container">
         <div class="neaberC">
-            <span>My skills</span>
+            <span>{{ translationService.getTranslation('mySkillsTitle') }}</span>
             <div class="line-skills"></div>
         </div>
-        <p class="p-text">I have grown my frontend developments skills that have allowed me to create different real projects.</p>
+        <p class="p-text">{{ translationService.getTranslation('mySkillsText') }}</p>
         <div class="button-skills">
-            <a href="#contact">Get in touch</a>
+            <a href="#contact"
+                (click)="letsTalkSection($event, 'contact')">{{translationService.getTranslation('getInTouch') }}</a>
         </div>
     </div>
 </div>

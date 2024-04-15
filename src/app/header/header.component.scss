@@ -1,16 +1,35 @@
+.header-container {
+    position: fixed;
+    width: 100%;
+    background-color: rgb(20, 29, 47);
+    z-index: 1000;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
     padding: 25px 100px;
-    z-index: 1000;
-    width: 88.7vw;
-    background-color: rgba(20, 29, 47, 1);
+    max-width: 1440px;
+    margin: 0 auto;
 
     a {
         text-decoration: none;
     }
+}
+
+.languageContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.lineDivided {
+    height: 25px;
+    background-color: white;
+    width: 2px;
+    border: 0;
 }
 
 h3 {
@@ -51,7 +70,7 @@ h3 {
     justify-content: center;
     align-items: center;
     position: absolute;
-    height: calc(100vh - 118px);
+    height: calc(103vh - 118px);
     width: 100%;
     top: 100px;
     left: 0;
@@ -62,6 +81,22 @@ h3 {
         color: white;
         font-weight: 700;
         font-size: 40px;
+
+        &:hover {
+            color: rgb(0, 190, 232);
+        }
+    }
+}
+
+.languageContainerMobile {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    gap: 10px;
+
+    a {
+        cursor: pointer;
 
         &:hover {
             color: rgb(0, 190, 232);
@@ -88,6 +123,12 @@ h3 {
 @media (max-width: 1300px) {
     header {
         padding: 25px 65px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .mobileNav {
+        display: none;
     }
 }
 

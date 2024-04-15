@@ -1,20 +1,14 @@
 <div class="mainContactContainer" id="contact">
     <div class="lineHDiv">
         <div class="lineContact"></div>
-        <span class="Contact">Contact</span>
+        <span class="Contact">{{ translationService.getTranslation('contactTitle') }}</span>
     </div>
 
     <div class="space-between">
         <div class="textContainer">
-            <span class="textDown">Got a problem to solve?</span>
-            <p class="longPText">
-                Contact me through this from, I am interested in hearing from you, knowing your ideas and contributing
-                to
-                your projects with my work.
-            </p>
-            <p class="textContactMe">
-                Need a Frontend developer? <span>Contact me!</span>
-            </p>
+            <span class="textDown">{{ translationService.getTranslation('contactIntro') }}</span>
+            <p class="longPText">{{ translationService.getTranslation('contactDescription') }}</p>
+            <p class="textContactMe">{{ translationService.getTranslation('contactPrompt') }}</p>
         </div>
 
         <img class="lastImgBlue" src="/assets/img/D. blue 3 footer.png">
@@ -48,12 +42,15 @@
             </form>
             <div class="boxDiv">
                 <input type="checkbox" class="checkboxS" [(ngModel)]="contactData.agreed" name="agreed" required>
-                <p>I've read the <a (click)="dataProtection()">privacy policy</a> and agree to the processing of my data
-                    as outlined</p>
+                <p>
+                    {{ translationService.getTranslation('privacyPolicyAgreement') }}
+                    <a (click)="dataProtection()">{{ translationService.getTranslation('privacyPolicyLink') }}</a>
+                    {{ translationService.getTranslation('andAgree') }}
+                </p>
             </div>
             <div class="buttonSend" [class.buttonActive]="contactForm.valid && contactData.agreed"
                 (click)="contactForm.valid && contactData.agreed && onSubmit(contactForm)">
-                Send message :)
+                {{ translationService.getTranslation('sendButton') }}
             </div>
         </div>
     </div>

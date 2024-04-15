@@ -1,13 +1,13 @@
 .MeContainer {
     padding-top: 83px;
+    min-height: 100vh;
 }
 
 .emanuelImgOne {
     position: absolute;
-    height: 635px;
-    width: 953px;
-    top: 83px;
-    left: -95px;
+    height: 705px;
+    top: 140px;
+    left: -160px;
 }
 
 .mainTextContainerOne {
@@ -46,7 +46,7 @@
 }
 
 .introduceDiv {
-    margin-bottom: 300px;
+    margin-bottom: 200px;
     margin-left: -55px;
 }
 
@@ -101,7 +101,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: -215px;
+    margin-top: -280px;
 }
 
 .mainContainerTwo {
@@ -194,12 +194,24 @@
     .mainTextContainerOne {
         display: flex;
         align-items: center;
-        justify-content: center;
         flex-direction: column;
+    }
 
-        img {
-            margin-right: 61vh;
-        }
+    .backgroundImgEl {
+        transform: rotate(-90deg);
+    }
+
+    .bildMargin {
+        margin: 0 auto;
+    }
+
+    .emanuelImgOne {
+        height: 650px;
+        top: 32px;
+        display: flex;
+        position: absolute;
+        margin-left: -100px;
+        left: auto;
     }
 
     .background-form {
@@ -209,7 +221,7 @@
     .introduceDiv {
         z-index: 111;
         margin-left: 0px;
-        margin-top: -170px;
+        margin-top: -198px;
     }
 
     .mainContainerTwo {
@@ -217,7 +229,7 @@
     }
 
     .background-form-container {
-        margin-top: -610px;
+        margin-top: -535px;
     }
 
     .contactContainer {
@@ -225,23 +237,9 @@
     }
 }
 
-@media (max-width: 1100px) {
-    .mainTextContainerOne {
-        img {
-            margin-right: 33vh;
-        }
-    }
-}
-
 @media (max-width: 870px) {
     .maxN {
         display: none;
-    }
-
-    .mainTextContainerOne {
-        img {
-            margin-right: 9vh;
-        }
     }
 }
 
@@ -252,9 +250,8 @@
 }
 
 @media (max-width: 670px) {
-    .emanuelImgOne {
-        left: -175px;
-        top: 48px;
+    .backgroundImgEl {
+        margin-left: -50px;
     }
 
     .textName {
@@ -264,11 +261,19 @@
     .textLeft {
         font-size: 30px;
     }
+
+    .introduceDiv {
+        margin-top: -180px;
+    }
+
+    .emanuelImgOne {
+        margin-left: -180px;
+    }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
     .emanuelImgOne {
-        left: -250px;
+        margin-left: -235px;
     }
 }
 
@@ -283,10 +288,7 @@
     }
 
     .emanuelImgOne {
-        height: 538px;
-        width: 838px;
-        top: 145px;
-        left: -222px;
+        margin-left: -280px;
     }
 }
 
@@ -302,19 +304,65 @@
     .textLeft {
         font-size: 21px;
     }
+}
 
+@media (max-width: 440px) {
     .emanuelImgOne {
-        top: 123px;
+        margin-left: -233px;
+        height: 550px;
+        top: 135px;
+    }
+
+    .mainContainerTwo {
+        gap: 26px;
+    }
+
+    .backgroundImgEl {
+        transform: rotate(0deg);
+    }
+}
+
+@media (max-width: 414px) {
+    .emanuelImgOne {
+        margin-left: -215px;
+        height: 550px;
+        top: 80px;
+    }
+
+    .introduceDiv {
+        margin-top: -230px;
     }
 }
 
 @media (max-width: 375px) {
     .background-form-container {
-        margin-top: -500px;
+        margin-top: -408px;
     }
 
     .emanuelImgOne {
-        top: 179px;
-        left: -241px;
+        margin-left: -230px;
+        height: 550px;
+        top: 133px;
+    }
+
+    .mainContainerTwo {
+        gap: 16px;
+    }
+
+    .introduceDiv {
+        margin-top: -200px;
+    }
+}
+
+@media (max-height: 667px) and (max-width: 375px) {
+    .background-form-container {
+        margin-top: -380px;
+    }
+}
+
+@media (max-height: 812px) and (max-width: 375px) {
+    .introduceDiv {
+        margin-top: -193px;
+        margin-bottom: 165px;
     }
 }

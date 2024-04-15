@@ -1,26 +1,38 @@
-<header id="header">
-    <a href="#landing-page">
-        <h3><span class="sOne">E</span>manu<span class="sTwo">e</span>l</h3>
-    </a>
-    <div class="navBar">
-        <a href="#aboutMe">About me</a>
-        <a href="#mySkills">Skills</a>
-        <a href="#portfolio">Portfolio</a>
-    </div>
-    <img (click)="mobileNav()" class="mobileImg d-none" src="/assets/imgMobile/burger menu.png">
+<div class="header-container">
+    <header id="header">
+        <a href="#landing-page">
+            <h3><span class="sOne">E</span>manu<span class="sTwo">e</span>l</h3>
+        </a>
+        <div class="navBar">
+            <a href="#aboutMe"
+                (click)="scrollToSection($event, 'aboutMe')">{{translationService.getTranslation('aboutMe')}}</a>
+            <a href="#mySkills" (click)="scrollToSection($event, 'mySkills')">Skills</a>
+            <a href="#portfolio"
+                (click)="scrollToSection($event, 'portfolio')">{{translationService.getTranslation('portfolio')}}</a>
+            <div class="languageContainer">
+                <a (click)="setLanguage('DE')">DE</a>
+                <div class="lineDivided"></div> <a (click)="setLanguage('EN')">EN</a>
+            </div>
+        </div>
+        <img (click)="mobileNav()" class="mobileImg d-none" src="/assets/imgMobile/burger menu.png">
 
-    <div class="mobileNav" [ngClass]="{'d-none': !isMobileNavVisible}">
-        <a class="aClass" href="#aboutMe" (click)="closeMobileNav()">
-            <span>About me</span>
-        </a>
-        <a class="aClass" href="#mySkills" (click)="closeMobileNav()">
-            <span>Skills</span>
-        </a>
-        <a class="aClass" href="#portfolio" (click)="closeMobileNav()">
-            <span>Portfolio</span>
-        </a>
-        <a class="aClass" href="#contact" (click)="closeMobileNav()">
-            <span>Contact</span>
-        </a>
-    </div> 
-</header>
+        <div class="mobileNav" [ngClass]="{'d-none': !isMobileNavVisible}">
+            <a class="aClass" href="#aboutMe" (click)="scrollToSection($event, 'aboutMe')">
+                <span>{{translationService.getTranslation('aboutMe')}}</span>
+            </a>
+            <a class="aClass" href="#mySkills" (click)="scrollToSection($event, 'mySkills')">
+                <span>Skills</span>
+            </a>
+            <a class="aClass" href="#portfolio" (click)="scrollToSection($event, 'portfolio')">
+                <span>{{translationService.getTranslation('portfolio')}}</span>
+            </a>
+            <a class="aClass" href="#contact" (click)="scrollToSection($event, 'contact')">
+                <span>{{ translationService.getTranslation('contactTitle') }}</span>
+            </a>
+            <div class="languageContainerMobile">
+                <a (click)="setLanguage('DE')">DE</a>
+                <div class="lineDivided"></div> <a (click)="setLanguage('EN')">EN</a>
+            </div>
+        </div>
+    </header>
+</div>

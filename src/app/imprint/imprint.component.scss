@@ -78,12 +78,19 @@ h1 {
 }
 
 @keyframes bounceDownAdjusted {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: rotate(90deg) translateX(0);
     }
+
     40% {
         transform: rotate(90deg) translateX(30px);
     }
+
     60% {
         transform: rotate(90deg) translateX(15px);
     }
@@ -133,7 +140,6 @@ h1 {
         }
     }
 }
-
 // Imprint OFF
 
 
@@ -163,7 +169,7 @@ h1 {
     .hOneDz {
         font-size: 35px;
     }
-    
+
     .mainDataProtectionContainer {
         font-size: 1em;
     }
