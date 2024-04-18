@@ -22,13 +22,13 @@ export class ContactComponent implements AfterViewInit {
     agreed: false,
   }
 
-  mailTest = true;
+  mailTest = false;
 
   http = inject(HttpClient);
 
   // for the POST request.
   post = {
-    endPoint: 'https://emanuel-portfolio.netlify.app/sendMail.php',
+    endPoint: 'https://emanuel-schaefer.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -43,7 +43,7 @@ export class ContactComponent implements AfterViewInit {
    * @param ngForm Reference to the Angular form.
    */
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.submitted && ngForm.form.valid) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
         .subscribe({
           next: (response) => {
@@ -55,9 +55,6 @@ export class ContactComponent implements AfterViewInit {
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      console.info('Testmodus aktiv, E-Mail nicht gesendet.');
-      ngForm.resetForm();
     }
   }
 
