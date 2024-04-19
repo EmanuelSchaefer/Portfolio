@@ -14,7 +14,7 @@
         <img class="lastImgBlue" src="/assets/img/D. blue 3 footer.png">
 
         <div class="rightContainer">
-            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" method="post" data-netlify="true">
+            <form onSubmit="submit" name="contact" method="post" data-netlify="true">
                 <div class="inputTextarea">
                     <div class="divCenter">
                         <input for="name" #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name"
@@ -50,7 +50,7 @@
                             {{ translationService.getTranslation('andAgree') }}
                         </p>
                     </div>
-                    <input class="buttonSend" type="submit" value="Send Message :)" [class.buttonActive]="contactForm.valid && contactData.agreed">
+                    <input class="buttonSend" type="submit" value="Send Message :)">
                 </div>
             </form>
         </div>
