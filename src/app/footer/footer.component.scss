@@ -1,0 +1,80 @@
+.line-blueH {
+    border: 2px solid rgba(0, 190, 232, 1);
+    width: 100%;
+}
+
+.mainFooterContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    height: 291px;
+    background-color: rgba(20, 29, 47, 1);
+    color: white;
+}
+
+.rightFC {
+    display: flex;
+    gap: 50px;
+
+    img {
+        cursor: pointer;
+    }
+}
+
+.centerFC {
+    font-size: 23px;
+}
+
+.leftFC {
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+
+    h2 {
+        font-size: 56px;
+        font-weight: 700;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 23px;
+        cursor: pointer;
+
+        &:hover {
+            color: rgba(0, 190, 232, 1);
+        }
+    }
+}
+
+.eColor {
+    color: #4B47FF;
+}
+
+.eSColor {
+    color: rgb(0, 190, 232);
+}
+
+
+// mobile footer SCSS
+@media (max-width: 1000px) {
+    .mainFooterContainer {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    h2 {
+        margin-bottom: 8px;
+    }
+
+    .leftFC {
+        a {
+            margin-left: 60px;
+        }
+    }
+}

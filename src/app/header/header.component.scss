@@ -1,0 +1,166 @@
+.header-container {
+    position: fixed;
+    width: 100%;
+    background-color: rgb(20, 29, 47);
+    z-index: 1000;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 100px;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.languageContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.lineDivided {
+    height: 25px;
+    background-color: white;
+    width: 2px;
+    border: 0;
+}
+
+h3 {
+    color: white;
+    font-size: 50px;
+
+    .sOne {
+        color: #4B47FF;
+    }
+
+    .sTwo {
+        color: rgb(0, 190, 232);
+    }
+}
+
+.navBar {
+    display: flex;
+    gap: 29px;
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 23px;
+    }
+
+    a:hover {
+        color: rgb(0, 190, 232);
+    }
+}
+
+.mobileImg {
+    cursor: pointer;
+}
+
+.mobileNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: calc(103vh - 118px);
+    width: 100%;
+    top: 100px;
+    left: 0;
+    background-color: #141d2fb3;
+    backdrop-filter: blur(3px);
+
+    span {
+        color: white;
+        font-weight: 700;
+        font-size: 40px;
+
+        &:hover {
+            color: rgb(0, 190, 232);
+        }
+    }
+}
+
+.languageContainerMobile {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    gap: 10px;
+
+    a {
+        cursor: pointer;
+
+        &:hover {
+            color: rgb(0, 190, 232);
+        }
+    }
+}
+
+.aClass {
+    margin-bottom: 30px;
+}
+
+.d-none {
+    display: none;
+}
+
+
+// mobile SCSS
+@media (max-width: 1669px) {
+    header {
+        padding: 25px 86px;
+    }
+}
+
+@media (max-width: 1300px) {
+    header {
+        padding: 25px 65px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .mobileNav {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .navBar {
+        display: none;
+    }
+
+    .mobileImg {
+        display: block;
+        object-fit: cover;
+    }
+
+    header {
+        padding: 25px 48px;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 25px 31px;
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        padding: 25px 23px;
+    }
+}
+
+@media (max-width: 320px) {
+    header {
+        padding: 25px 10px;
+    }
+}

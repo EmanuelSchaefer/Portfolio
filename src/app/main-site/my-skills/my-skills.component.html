@@ -1,0 +1,56 @@
+<div class="mainSkill-container" id="mySkills">
+    <div class="rightIcon-container">
+        <div class="iconDiv">
+            <img class="imgAnimation" src="/assets/img/Icons (10).png">
+            <span>Angular</span>
+        </div>
+        <div class="iconDiv">
+            <img class="imgAnimation" src="/assets/img/Icons (1).png">
+            <span>TypeScript</span>
+        </div>
+        <div class="iconDiv">
+            <img class="imgAnimation" src="/assets/img/Icons (2).png">
+            <span>JavaScript</span>
+        </div>
+        <div class="iconDiv">
+            <img class="imgAnimation" src="/assets/img/Icons (3).png">
+            <span>HTML</span>
+        </div>
+        <div class="iconDiv">
+            <img class="imgAnimation" src="/assets/img/Icons (4).png">
+            <span>Firebase</span>
+        </div>
+        <div class="iconDiv">
+            <img class="imgAnimation" src="/assets/img/Icons (5).png">
+            <span>GIT</span>
+        </div>
+        <div class="iconDiv">
+            <img class="imgAnimation" src="/assets/img/Icons (6).png">
+            <span>CSS</span>
+        </div>
+        <div class="iconDiv">
+            <img class="imgAnimation" src="/assets/img/Icons (7).png">
+            <span>Rest-Api</span>
+        </div>
+        <div class="iconDiv">
+            <img class="imgAnimation" src="/assets/img/Icons (8).png">
+            <span>Scrum</span>
+        </div>
+        <div class="iconDiv">
+            <img class="imgAnimation" src="/assets/img/Icons (9).png">
+            <span>Materialdesign</span>
+        </div>
+    </div>
+    <img class="img-blueSkills" src="/assets/img/L. blue 1.png">
+    <div class="leftSkill-container">
+        <div class="neaberC">
+            <span>{{ translationService.getTranslation('mySkillsTitle') }}</span>
+            <div class="line-skills"></div>
+        </div>
+        <p class="p-text">{{ translationService.getTranslation('mySkillsText') }}</p>
+        <div class="button-skills">
+            <a href="#contact"
+                (click)="letsTalkSection($event, 'contact')">{{translationService.getTranslation('getInTouch') }}</a>
+        </div>
+    </div>
+</div>
