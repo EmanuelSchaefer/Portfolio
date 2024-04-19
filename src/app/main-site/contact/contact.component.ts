@@ -1,60 +1,34 @@
-import { Component, inject, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, ElementRef, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { FormsModule ,NgForm } from '@angular/forms';
 import { TranslationService } from '../../translation.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements AfterViewInit {
   constructor(private el: ElementRef, private router: Router, public translationService: TranslationService) { }
 
-  // Contact form data initialization.
   contactData = {
     name: "",
     email: "",
     message: "",
     agreed: false,
-  }
-
-  mailTest = false;
-
-  http = inject(HttpClient);
-
-  // for the POST request.
-  post = {
-    endPoint: 'https://emanuel-schaefer.de/assets/server/sendMail.php',
-    body: (payload: any) => JSON.stringify(payload),
-    options: {
-      headers: {
-        'Content-Type': 'text/plain',
-        responseType: 'text',
-      },
-    },
   };
 
   /**
-   * Processes the submission of the contact form.
+   * Called when the form is submitted.
    * @param ngForm Reference to the Angular form.
    */
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
-        .subscribe({
-          next: (response) => {
-            console.info('Formular erfolgreich gesendet');
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
-        });
+    if (ngForm.valid) {
+      console.info('Form is valid and ready to be submitted to Netlify.');
+    } else {
+      console.error('Form is invalid.');
     }
   }
 

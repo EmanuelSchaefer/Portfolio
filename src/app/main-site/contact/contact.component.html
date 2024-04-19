@@ -14,35 +14,25 @@
         <img class="lastImgBlue" src="/assets/img/D. blue 3 footer.png">
 
         <div class="rightContainer">
-            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" name="contact" method="POST"
+                data-netlify="true">
+                <input type="hidden" name="form-name" value="contact" />
                 <div class="inputTextarea">
                     <div class="divCenter">
-                        <input for="name" #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name"
-                            placeholder="Your name" name="name" required minlength="5">
-                        <div [class.d-none]="name.valid || !name.touched" class="errorMessage">
-                            A name is required and must be at least 5 characters long.
-                        </div>
+                        <input type="text" id="name" placeholder="Your name" name="name" required minlength="5">
                     </div>
                     <div class="divCenter">
-                        <input for="email" #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email"
-                            placeholder="Your email" name="email" required
+                        <input type="email" id="email" placeholder="Your email" name="email" required
                             pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
-                        <div [class.d-none]="email.valid || !email.touched" class="errorMessage">
-                            Please enter a valid email address.
-                        </div>
                     </div>
                     <div class="divCenter">
-                        <textarea for="message" #message="ngModel" [(ngModel)]="contactData.message" id="message"
-                            placeholder="Your message" name="message" required minlength="10"></textarea>
-                        <div [class.d-none]="message.valid || !message.touched" class="errorMessage">
-                            Please enter a message with at least 10 characters.
-                        </div>
+                        <textarea id="message" placeholder="Your message" name="message" required
+                            minlength="10"></textarea>
                     </div>
                 </div>
                 <div class="centerDivbb">
                     <div class="boxDiv">
-                        <input type="checkbox" class="checkboxS" [(ngModel)]="contactData.agreed" name="agreed"
-                            required>
+                        <input type="checkbox" class="checkboxS" name="agreed" required>
                         <p>
                             {{ translationService.getTranslation('privacyPolicyAgreement') }}
                             <a (click)="dataProtection()">{{ translationService.getTranslation('privacyPolicyLink')
@@ -50,7 +40,8 @@
                             {{ translationService.getTranslation('andAgree') }}
                         </p>
                     </div>
-                    <input class="buttonSend" type="submit" value="Send Message :)" [class.buttonActive]="contactForm.valid && contactData.agreed">
+                    <input class="buttonSend" type="submit" value="Send Message :)"
+                        [disabled]="!contactForm.form.valid">
                 </div>
             </form>
         </div>
