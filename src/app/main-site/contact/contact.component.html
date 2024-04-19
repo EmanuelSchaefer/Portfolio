@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="divCenter">
-                        <textarea for="message" #message="ngModel" [(ngModel)]="contactData.message" id="message"
+                        <textarea for="message" #message="ngModel" [(ngModel)]="contactData.message" type="textarea" id="message"
                             placeholder="Your message" name="message" required minlength="10"></textarea>
                         <div [class.d-none]="message.valid || !message.touched" class="errorMessage">
                             Please enter a message with at least 10 characters.
@@ -50,7 +50,7 @@
                             {{ translationService.getTranslation('andAgree') }}
                         </p>
                     </div>
-                    <input class="buttonSend" type="submit" value="Send Message :)">
+                    <button class="buttonSend" type="submit">Send Message :)</button>
                 </div>
             </form>
         </div>

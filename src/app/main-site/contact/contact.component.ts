@@ -26,38 +26,6 @@ export class ContactComponent implements AfterViewInit {
 
   http = inject(HttpClient);
 
-  // for the POST request.
-  post = {
-    endPoint: 'https://emanuel-schaefer.de/assets/server/sendMail.php',
-    body: (payload: any) => JSON.stringify(payload),
-    options: {
-      headers: {
-        'Content-Type': 'text/plain',
-        responseType: 'text',
-      },
-    },
-  };
-
-  /**
-   * Processes the submission of the contact form.
-   * @param ngForm Reference to the Angular form.
-   */
-  onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
-        .subscribe({
-          next: (response) => {
-            console.info('Formular erfolgreich gesendet');
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
-        });
-    }
-  }
-
   /**
    * Navigates to the privacy page and scrolls to the specified id.
    */
