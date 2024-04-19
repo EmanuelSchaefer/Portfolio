@@ -14,7 +14,6 @@
         <img class="lastImgBlue" src="/assets/img/D. blue 3 footer.png">
 
         <div class="rightContainer">
-<<<<<<< HEAD
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                 <div class="inputTextarea">
                     <div class="divCenter">
@@ -53,22 +52,6 @@
                     </div>
                     <input class="buttonSend" type="submit" value="Send Message :)" [class.buttonActive]="contactForm.valid && contactData.agreed">
                 </div>
-=======
-            <form name="contact" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="contact">
-                <p>
-                    <label>Your Name: <input type="text" name="name" required /></label>
-                </p>
-                <p>
-                    <label>Your Email: <input type="email" name="email" required /></label>
-                </p>
-                <p>
-                    <label>Message: <textarea name="message" required></textarea></label>
-                </p>
-                <p>
-                    <button type="submit">Send</button>
-                </p>
->>>>>>> e9ef8ceb76d726dd8b5716a0420104669d07d560
             </form>
         </div>
     </div>
