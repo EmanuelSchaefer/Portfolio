@@ -14,7 +14,7 @@
         <img class="lastImgBlue" src="/assets/img/D. blue 3 footer.png">
 
         <div class="rightContainer">
-            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" method="post" data-netlify="true">
                 <div class="inputTextarea">
                     <div class="divCenter">
                         <input for="name" #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name"

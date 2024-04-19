@@ -28,7 +28,7 @@ export class ContactComponent implements AfterViewInit {
 
   // for the POST request.
   post = {
-    endPoint: 'https://emanuel-schaefer.de/sendMail.php',
+    endPoint: 'https://emanuel-schaefer.de/assets/server/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
