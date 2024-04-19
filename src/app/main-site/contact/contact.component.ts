@@ -26,6 +26,7 @@ export class ContactComponent implements AfterViewInit {
 
   http = inject(HttpClient);
 
+<<<<<<< HEAD
   // for the POST request.
   post = {
     endPoint: 'https://emanuel-schaefer.de/sendMail.php',
@@ -58,6 +59,8 @@ export class ContactComponent implements AfterViewInit {
     }
   }
 
+=======
+>>>>>>> e9ef8ceb76d726dd8b5716a0420104669d07d560
   /**
    * Navigates to the privacy page and scrolls to the specified id.
    */
