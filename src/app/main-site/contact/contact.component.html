@@ -32,26 +32,14 @@
                         </div>
                     </div>
                     <div class="divCenter">
-                        <textarea for="message" #message="ngModel" [(ngModel)]="contactData.message" type="textarea" id="message"
-                            placeholder="Your message" name="message" required minlength="10"></textarea>
+                        <textarea for="message" #message="ngModel" [(ngModel)]="contactData.message" type="textarea"
+                            id="message" placeholder="Your message" name="message" required minlength="10"></textarea>
                         <div [class.d-none]="message.valid || !message.touched" class="errorMessage">
                             Please enter a message with at least 10 characters.
                         </div>
                     </div>
                 </div>
-                <div class="centerDivbb">
-                    <div class="boxDiv">
-                        <input type="checkbox" class="checkboxS" [(ngModel)]="contactData.agreed" name="agreed"
-                            required>
-                        <p>
-                            {{ translationService.getTranslation('privacyPolicyAgreement') }}
-                            <a (click)="dataProtection()">{{ translationService.getTranslation('privacyPolicyLink')
-                                }}</a>
-                            {{ translationService.getTranslation('andAgree') }}
-                        </p>
-                    </div>
-                    <button class="buttonSend" type="submit">Send Message :)</button>
-                </div>
+                <button class="buttonSend" type="submit">Send Message :)</button>
             </form>
         </div>
     </div>
