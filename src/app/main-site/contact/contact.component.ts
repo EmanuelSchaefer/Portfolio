@@ -24,11 +24,10 @@ export class ContactComponent implements AfterViewInit {
    * Called when the form is submitted.
    * @param ngForm Reference to the Angular form.
    */
-  onSubmit(ngForm: NgForm) {
-    if (ngForm.valid) {
-      console.info('Form is valid and ready to be submitted to Netlify.');
+  onSubmit(contactForm: NgForm) {
+    if (contactForm.valid && this.contactData.agreed) {
     } else {
-      console.error('Form is invalid.');
+      console.error('Form is invalid or agreement not checked.');
     }
   }
 

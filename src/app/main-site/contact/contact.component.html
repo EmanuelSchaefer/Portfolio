@@ -14,25 +14,28 @@
         <img class="lastImgBlue" src="/assets/img/D. blue 3 footer.png">
 
         <div class="rightContainer">
-            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" name="contact" method="POST"
+            <form (ngSubmit)="onSubmit(contactForm)" onSubmit="submit" #contactForm="ngForm" name="contact" method="POST"
                 data-netlify="true">
                 <input type="hidden" name="form-name" value="contact" />
                 <div class="inputTextarea">
                     <div class="divCenter">
-                        <input type="text" id="name" placeholder="Your name" name="name" required minlength="5">
+                        <input type="text" id="name" placeholder="Your name" name="name" [(ngModel)]="contactData.name"
+                            required minlength="5">
                     </div>
                     <div class="divCenter">
-                        <input type="email" id="email" placeholder="Your email" name="email" required
+                        <input type="email" id="email" placeholder="Your email" name="email"
+                            [(ngModel)]="contactData.email" required
                             pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
                     </div>
                     <div class="divCenter">
-                        <textarea id="message" placeholder="Your message" name="message" required
-                            minlength="10"></textarea>
+                        <textarea id="message" placeholder="Your message" name="message"
+                            [(ngModel)]="contactData.message" required minlength="10"></textarea>
                     </div>
                 </div>
                 <div class="centerDivbb">
                     <div class="boxDiv">
-                        <input type="checkbox" class="checkboxS" name="agreed" required>
+                        <input type="checkbox" class="checkboxS" name="agreed" [(ngModel)]="contactData.agreed"
+                            required>
                         <p>
                             {{ translationService.getTranslation('privacyPolicyAgreement') }}
                             <a (click)="dataProtection()">{{ translationService.getTranslation('privacyPolicyLink')
@@ -40,8 +43,8 @@
                             {{ translationService.getTranslation('andAgree') }}
                         </p>
                     </div>
-                    <input class="buttonSend" type="submit" value="Send Message :)"
-                        [disabled]="!contactForm.form.valid">
+                    <input class="buttonSend" [class.buttonActive]="contactForm.valid && contactData.agreed"
+                        type="submit" value="Send Message :)">
                 </div>
             </form>
         </div>
