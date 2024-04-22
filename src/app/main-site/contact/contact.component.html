@@ -42,8 +42,8 @@
                             {{ translationService.getTranslation('andAgree') }}
                         </p>
                     </div>
-                    <input class="buttonSend" [class.buttonActive]="contactForm.valid && contactData.agreed"
-                        type="submit" value="Send Message :)">
+                    <button class="buttonSend" [class.buttonActive]="contactForm.valid && contactData.agreed"
+                        type="submit" value="Send Message :)"></button>
                 </div>
             </form>
         </div>
