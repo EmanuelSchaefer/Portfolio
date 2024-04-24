@@ -1,6 +1,6 @@
-import { Component, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule ,NgForm } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { TranslationService } from '../../translation.service';
 
 @Component({
@@ -11,6 +11,8 @@ import { TranslationService } from '../../translation.service';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements AfterViewInit {
+  @ViewChild('contactForm') form!: NgForm;
+
   constructor(private el: ElementRef, private router: Router, public translationService: TranslationService) { }
 
   contactData = {
@@ -24,10 +26,11 @@ export class ContactComponent implements AfterViewInit {
    * Called when the form is submitted.
    * @param ngForm Reference to the Angular form.
    */
-  onSubmit(contactForm: NgForm) {
-    if (contactForm.valid && this.contactData.agreed) {
+  onSubmit() {
+    if (this.form.valid && this.form.value.agreed) {
+      
     } else {
-      console.error('Form is invalid or agreement not checked.');
+      alert('Bitte füllen Sie alle erforderlichen Felder korrekt aus und stimmen Sie der Datenschutzrichtlinie zu.');
     }
   }
 
