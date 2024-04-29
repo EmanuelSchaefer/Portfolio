@@ -29,8 +29,6 @@ export class ContactComponent implements AfterViewInit {
   onSubmit() {
     if (this.form.valid && this.form.value.agreed) {
       console.log('Form is valid and ready to be processed by Netlify.');
-    } else {
-      alert('Bitte füllen Sie alle erforderlichen Felder korrekt aus und stimmen Sie der Datenschutzrichtlinie zu.');
     }
   }
 
