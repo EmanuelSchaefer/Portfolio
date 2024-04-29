@@ -14,36 +14,21 @@
         <img class="lastImgBlue" src="/assets/img/D. blue 3 footer.png">
 
         <div class="rightContainer">
-            <form name="contact" method="POST" data-netlify="true" (ngSubmit)="onSubmit()" #contactForm="ngForm">
-                <input type="hidden" name="form-name" value="contact" />
-                <div class="inputTextarea">
-                    <div class="divCenter">
-                        <input type="text" id="name" placeholder="Your name" name="name" ngModel #name="ngModel"
-                            required minlength="5">
-                    </div>
-                    <div class="divCenter">
-                        <input type="email" id="email" placeholder="Your email" name="email" ngModel #email="ngModel"
-                            required pattern="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,64}">
-                    </div>
-                    <div class="divCenter">
-                        <textarea id="message" placeholder="Your message" name="message" ngModel #message="ngModel"
-                            required minlength="10"></textarea>
-                    </div>
-                </div>
-
-                <div class="centerDivbb">
-                    <div class="boxDiv">
-                        <input type="checkbox" class="checkboxS" name="agreed" ngModel #agreed="ngModel" required>
-                        <p>
-                            {{ translationService.getTranslation('privacyPolicyAgreement') }}
-                            <a (click)="dataProtection()">{{ translationService.getTranslation('privacyPolicyLink')
-                                }}</a>
-                            {{ translationService.getTranslation('andAgree') }}
-                        </p>
-                    </div>
-                    <button class="buttonSend" [class.buttonActive]="contactForm.valid" type="submit">Send Message
-                        :)</button>
-                </div>
+            <form name="contact" method="POST" data-netlify="true">
+                <p>
+                    <label>Ihr Name: <input type="text" name="name" required></label>
+                </p>
+                <p>
+                    <label>Ihre E-Mail: <input type="email" name="email" required></label>
+                </p>
+                <p>
+                    <label>Nachricht:
+                        <textarea name="message" required></textarea>
+                    </label>
+                </p>
+                <p>
+                    <button type="submit">Senden</button>
+                </p>
             </form>
         </div>
     </div>
