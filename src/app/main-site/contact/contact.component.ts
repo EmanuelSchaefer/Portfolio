@@ -83,4 +83,9 @@ export class ContactComponent implements AfterViewInit {
     observer.observe(contactElement);
   }
 
+  // Go up
+  scrollToTop(): void {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
 }
