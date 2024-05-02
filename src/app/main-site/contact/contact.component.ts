@@ -2,16 +2,18 @@ import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslationService } from '../../translation.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
   @ViewChild('contactForm') form!: NgForm;
+  isContactFormSubmitted = false;
 
   constructor(private el: ElementRef, private router: Router, public translationService: TranslationService) { }
 
@@ -20,21 +22,18 @@ export class ContactComponent implements OnInit {
   }
 
   contactData = {
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: ''
   };
 
-  /**
-   * Called when the form is submitted.
-   * @param ngForm Reference to the Angular form.
-   */
   onSubmit(form: NgForm) {
-    if (form.valid && this.contactData) {
+    if (form.valid) {
       console.log('Form is valid and ready to be processed by Netlify.');
-      // Hier könnten Sie zusätzlich Logik für das Absenden der Daten an Netlify hinzufügen
+      this.isContactFormSubmitted = true;
+      // Additional logic to handle form submission, if necessary
     } else {
-      console.log('Form is invalid or agreement not checked.');
+      console.log('Form is invalid.');
     }
   }
 
