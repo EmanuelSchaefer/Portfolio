@@ -18,15 +18,15 @@
                 <input type="hidden" name="form-name" value="contact" />
                 <div class="inputTextarea">
                     <div class="divCenter">
-                        <input type="text" id="name" placeholder="Your name" name="name" ngModel #name="ngModel"
+                        <input type="text" id="name" placeholder="Your name" name="name" [(ngModel)]="contactData.name"
                             required minlength="5">
                     </div>
                     <div class="divCenter">
-                        <input type="email" id="email" placeholder="Your email" name="email" ngModel #email="ngModel"
+                        <input type="email" id="email" placeholder="Your email" name="email" [(ngModel)]="contactData.email"
                             required pattern="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,64}">
                     </div>
                     <div class="divCenter">
-                        <textarea id="message" placeholder="Your message" name="message" ngModel #message="ngModel"
+                        <textarea id="message" placeholder="Your message" name="message" [(ngModel)]="contactData.message"
                             required minlength="10"></textarea>
                     </div>
                 </div>

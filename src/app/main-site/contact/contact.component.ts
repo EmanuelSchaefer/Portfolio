@@ -23,7 +23,6 @@ export class ContactComponent implements OnInit {
     name: "",
     email: "",
     message: "",
-    agreed: false,
   };
 
   /**
@@ -31,7 +30,7 @@ export class ContactComponent implements OnInit {
    * @param ngForm Reference to the Angular form.
    */
   onSubmit(form: NgForm) {
-    if (form.valid && this.contactData.agreed) {
+    if (form.valid && this.contactData) {
       console.log('Form is valid and ready to be processed by Netlify.');
       // Hier könnten Sie zusätzlich Logik für das Absenden der Daten an Netlify hinzufügen
     } else {
