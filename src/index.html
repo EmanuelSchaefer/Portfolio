@@ -12,6 +12,12 @@
 <body>
   <div class="content-wrapper">
     <app-root></app-root>
+    <form name="contact" method="POST" netlify hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" id="name" name="name" />
+      <input type="hidden" id="email" name="email" />
+      <textarea type="hidden" id="message" name="message"></textarea>
+    </form>
   </div>
 </body>
 

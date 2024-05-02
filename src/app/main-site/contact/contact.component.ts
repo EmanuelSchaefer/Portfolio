@@ -1,4 +1,4 @@
-import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslationService } from '../../translation.service';
@@ -10,10 +10,14 @@ import { TranslationService } from '../../translation.service';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements AfterViewInit {
+export class ContactComponent implements OnInit {
   @ViewChild('contactForm') form!: NgForm;
 
   constructor(private el: ElementRef, private router: Router, public translationService: TranslationService) { }
+
+  ngOnInit(): void {
+    
+  }
 
   contactData = {
     name: "",
@@ -26,9 +30,12 @@ export class ContactComponent implements AfterViewInit {
    * Called when the form is submitted.
    * @param ngForm Reference to the Angular form.
    */
-  onSubmit() {
-    if (this.form.valid && this.form.value.agreed) {
+  onSubmit(form: NgForm) {
+    if (form.valid && this.contactData.agreed) {
       console.log('Form is valid and ready to be processed by Netlify.');
+      // Hier könnten Sie zusätzlich Logik für das Absenden der Daten an Netlify hinzufügen
+    } else {
+      console.log('Form is invalid or agreement not checked.');
     }
   }
 
