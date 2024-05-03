@@ -14,39 +14,36 @@
         <img class="lastImgBlue" src="/assets/img/D. blue 3 footer.png">
 
         <div class="rightContainer">
-            <div>
-                <div *ngIf="isContactFormSubmitted">
-                    Thank you for reaching out! Your message has been successfully sent. I'll get back to you as soon as
-                    I can.
+            <form [formGroup]="contactForm" method="POST" (ngSubmit)="onSubmit()" netlify>
+                <input type="hidden" name="form-name" value="contact" />
+                <div class="inputTextarea">
+                    <div class="divCenter">
+                        <input type="text" id="name" placeholder="Your name" name="name" formControlName="name" required
+                            minlength="5">
+                    </div>
+                    <div class="divCenter">
+                        <input type="email" id="email" placeholder="Your email" name="email" formControlName="email"
+                            required pattern="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,64}">
+                    </div>
+                    <div class="divCenter">
+                        <textarea id="message" placeholder="Your message" name="message" formControlName="message"
+                            required minlength="10"></textarea>
+                    </div>
                 </div>
 
-                <form *ngIf="!isContactFormSubmitted" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm"
-                    method="POST" netlify>
-                    <input type="hidden" name="form-name" value="contact" />
-
-                    <label for="name">Name</label>
-                    <input id="name" type="text" name="name" [(ngModel)]="contactData.name" required #name="ngModel">
-                    <div *ngIf="name.invalid && name.touched" class="alert alert-danger">
-                        <small>Name is required</small>
+                <div class="centerDivbb">
+                    <div class="boxDiv">
+                        <input type="checkbox" class="checkboxS" name="agreed" formControlName="agreed" required>
+                        <p>
+                            {{ translationService.getTranslation('privacyPolicyAgreement') }}
+                            <a (click)="dataProtection()">{{ translationService.getTranslation('privacyPolicyLink')
+                                }}</a>
+                            {{ translationService.getTranslation('andAgree') }}
+                        </p>
                     </div>
-
-                    <label for="email">Email</label>
-                    <input id="email" type="email" name="email" [(ngModel)]="contactData.email" required
-                        #email="ngModel">
-                    <div *ngIf="email.invalid && email.touched" class="alert alert-danger">
-                        <small>Email is required</small>
-                    </div>
-
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" [(ngModel)]="contactData.message" required #message="ngModel"
-                        rows="4" cols="50"></textarea>
-                    <div *ngIf="message.invalid && message.touched" class="alert alert-danger">
-                        <small>Message is required</small>
-                    </div>
-
-                    <button type="submit" [disabled]="!contactForm.valid">Send message</button>
-                </form>
-            </div>
+                    <button type="submit" class="buttonSend" [class.buttonActive]="contactForm.valid" [disabled]="!contactForm.valid">Send Message :)</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

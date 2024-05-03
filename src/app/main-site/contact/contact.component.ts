@@ -1,39 +1,40 @@
-import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule, NgForm } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { TranslationService } from '../../translation.service';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
-  @ViewChild('contactForm') form!: NgForm;
-  isContactFormSubmitted = false;
+export class ContactComponent implements OnInit, AfterViewInit {
+  contactForm!: FormGroup;
+  private el: ElementRef;
 
-  constructor(private el: ElementRef, private router: Router, public translationService: TranslationService) { }
-
-  ngOnInit(): void {
-    
+  constructor(private elementRef: ElementRef, private router: Router, public translationService: TranslationService, private fb: FormBuilder) {
+    this.el = elementRef;
   }
 
-  contactData = {
-    name: '',
-    email: '',
-    message: ''
-  };
+  ngOnInit(): void {
+    this.contactForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(5)]],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(10)]],
+      agreed: [false, Validators.requiredTrue]
+    });
+  }
 
-  onSubmit(form: NgForm) {
-    if (form.valid) {
-      console.log('Form is valid and ready to be processed by Netlify.');
-      this.isContactFormSubmitted = true;
-      // Additional logic to handle form submission, if necessary
+  /**
+   * Called when the form is submitted.
+   */
+  onSubmit() {
+    if (this.contactForm.valid) {
+      console.log('Form is valid and ready to be processed.');
     } else {
-      console.log('Form is invalid.');
+      console.log('Form is invalid or agreement not checked.');
     }
   }
 
@@ -88,7 +89,7 @@ export class ContactComponent implements OnInit {
 
   // Go up
   scrollToTop(): void {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
 }
