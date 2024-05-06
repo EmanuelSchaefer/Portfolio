@@ -33,6 +33,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
   onSubmit() {
     if (this.contactForm.valid) {
       console.log('Form is valid and ready to be processed.');
+      console.log('Form Data:', this.contactForm.value);
     } else {
       console.log('Form is invalid or agreement not checked.');
     }

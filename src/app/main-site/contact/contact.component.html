@@ -14,7 +14,7 @@
         <img class="lastImgBlue" src="/assets/img/D. blue 3 footer.png">
 
         <div class="rightContainer">
-            <form [formGroup]="contactForm" method="POST" (ngSubmit)="onSubmit()" netlify>
+            <form [formGroup]="contactForm" name="contact" method="POST" (ngSubmit)="onSubmit()" netlify>
                 <input type="hidden" name="form-name" value="contact" />
                 <div class="inputTextarea">
                     <div class="divCenter">
@@ -41,7 +41,8 @@
                             {{ translationService.getTranslation('andAgree') }}
                         </p>
                     </div>
-                    <button type="submit" class="buttonSend" [class.buttonActive]="contactForm.valid" [disabled]="!contactForm.valid">Send Message :)</button>
+                    <button type="submit" class="buttonSend" [class.buttonActive]="contactForm.valid"
+                        [disabled]="!contactForm.valid">Send Message :)</button>
                 </div>
             </form>
         </div>
