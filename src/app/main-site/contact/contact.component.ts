@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { TranslationService } from '../../translation.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +15,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
   contactForm!: FormGroup;
   private el: ElementRef;
 
-  constructor(private elementRef: ElementRef, private router: Router, public translationService: TranslationService, private fb: FormBuilder) {
+  constructor(private elementRef: ElementRef, private router: Router, public translationService: TranslationService, private fb: FormBuilder, private http: HttpClient) {
     this.el = elementRef;
   }
 
@@ -32,8 +33,19 @@ export class ContactComponent implements OnInit, AfterViewInit {
    */
   onSubmit() {
     if (this.contactForm.valid) {
-      console.log('Form is valid and ready to be processed.');
-      console.log('Form Data:', this.contactForm.value);
+      const formData = this.contactForm.value;
+      formData['form-name'] = 'contact';
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded'
+      });
+
+      this.http.post('/', new URLSearchParams(formData).toString(), { headers, responseType: 'text' })
+        .subscribe(response => {
+          console.log('Netlify response:', response);
+          // Optional: Redirect nach dem erfolgreichen Senden oder Anzeigen einer Nachricht
+        }, error => {
+          console.error('Failed to submit the form to Netlify:', error);
+        });
     } else {
       console.log('Form is invalid or agreement not checked.');
     }
