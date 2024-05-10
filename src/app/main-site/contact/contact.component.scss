@@ -18,7 +18,9 @@
 }
 
 .errorMessage {
-    font-size: 14px;
+    font-size: 16px;
+    margin-top: 3px;
+    margin-left: 15px;
     color: red;
 }
 
@@ -147,6 +149,19 @@
         color: white;
         font-size: 16px;
     }
+}
+
+.messageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pMessageGreen {
+    color: green;
+    margin-top: -80px;
+    font-size: 25px;
+    font-weight: 700;
 }
 
 .buttonSend {

@@ -16,21 +16,33 @@
         <div class="rightContainer">
             <form [formGroup]="contactForm" name="contact" method="POST" (ngSubmit)="onSubmit()" netlify>
                 <input type="hidden" name="form-name" value="contact" />
+                <div *ngIf="messageStatus" class="messageContainer">
+                    <p class="pMessageGreen">{{ messageStatus }}</p>
+                </div>
                 <div class="inputTextarea">
                     <div class="divCenter">
                         <input type="text" id="name" placeholder="Your name" name="name" formControlName="name" required
                             minlength="5">
+                        <div *ngIf="f['name'].touched && f['name'].errors?.['minlength']" class="errorMessage">
+                            Name must be at least {{ f['name'].errors?.['minlength']?.requiredLength }} characters long.
+                        </div>
                     </div>
                     <div class="divCenter">
                         <input type="email" id="email" placeholder="Your email" name="email" formControlName="email"
                             required pattern="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,64}">
+                        <div *ngIf="f['email'].touched && f['email'].errors?.['email']" class="errorMessage">
+                            Please enter a valid email address.
+                        </div>
                     </div>
                     <div class="divCenter">
-                        <textarea type="text" id="message" placeholder="Your message" name="message" formControlName="message"
-                            required minlength="10"></textarea>
+                        <textarea type="text" id="message" placeholder="Your message" name="message"
+                            formControlName="message" required minlength="10"></textarea>
+                        <div *ngIf="f['message'].touched && f['message'].errors?.['minlength']" class="errorMessage">
+                            Message must be at least {{ f['message'].errors?.['minlength']?.requiredLength }} characters
+                            long.
+                        </div>
                     </div>
                 </div>
-
                 <div class="centerDivbb">
                     <div class="boxDiv">
                         <input type="checkbox" class="checkboxS" name="agreed" formControlName="agreed" required>

@@ -1,24 +1,29 @@
 import { Component, ElementRef, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../translation.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit, AfterViewInit {
   contactForm!: FormGroup;
   private el: ElementRef;
+  messageStatus: string | null = null;
 
   constructor(private elementRef: ElementRef, private router: Router, public translationService: TranslationService, private fb: FormBuilder, private http: HttpClient) {
     this.el = elementRef;
   }
 
+  /**
+   * Initializes the form with validation rules.
+   */
   ngOnInit(): void {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(5)]],
@@ -29,23 +34,32 @@ export class ContactComponent implements OnInit, AfterViewInit {
   }
 
   /**
+  * Quick access to form fields.
+  */
+  get f() {
+    return this.contactForm.controls;
+  }
+
+  /**
    * Called when the form is submitted.
    */
   onSubmit() {
     if (this.contactForm.valid) {
-      const formData = this.contactForm.value;
+      const formData: any = this.contactForm.value;
       formData['form-name'] = 'contact';
       const headers = new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded'
       });
-
       this.http.post('/', new URLSearchParams(formData).toString(), { headers, responseType: 'text' })
-        .subscribe(response => {
-          console.log('Netlify response:', response);
-          // Optional: Redirect nach dem erfolgreichen Senden oder Anzeigen einer Nachricht
-        }, error => {
-          console.error('Failed to submit the form to Netlify:', error);
-        });
+        .subscribe(
+          response => {
+            this.messageStatus = 'Message sent successfully.';
+            setTimeout(() => {
+              this.messageStatus = null;
+            }, 5000);
+            this.contactForm.reset();
+          }
+        );
     } else {
       console.log('Form is invalid or agreement not checked.');
     }
