@@ -31,7 +31,6 @@
     width: 109px;
     margin: 0;
     padding: 0;
-    margin-right: 230px;
 }
 
 .lineLong {
@@ -39,20 +38,19 @@
     width: 484px;
     margin: 0;
     padding: 0;
-    margin-left: 230px;
 }
 
 .imgDBlue {
     position: absolute;
     left: 0;
-    margin-top: 135vh;
-    z-index: -1;
+    margin-top: 10vh;
+    z-index: 0;
 }
 
 .imgLBlue {
     position: absolute;
     right: 0;
-    z-index: -1;
+    z-index: 0;
     margin-top: -700px;
 }
 
@@ -75,6 +73,12 @@
     }
 }
 
+@media (max-width: 1300px) {
+    .imgDBlue {
+        display: none;
+    }
+}
+
 @media (max-width: 1200px) {
     .mainPortfolioContainer {
         p {
@@ -86,6 +90,12 @@
 @media (max-width: 950px) {
     .textSelection {
         width: 86%;
+    }
+}
+
+@media (max-width: 930px) {
+    .imgLBlue {
+        display: none;
     }
 }
 

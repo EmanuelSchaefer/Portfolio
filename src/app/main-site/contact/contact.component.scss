@@ -211,13 +211,15 @@
             color: rgba(0, 190, 232, 1);
         }
     }
-}
 
-.lastImgBlue {
-    position: absolute;
-    margin-top: 350px;
-    z-index: -1;
-    left: 0;
+    p {
+        display: flex;
+        max-width: 531px;
+        overflow-wrap: break-word;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
 }
 
 
@@ -230,6 +232,12 @@
 
         textarea {
             width: 350px;
+        }
+    }
+
+    .boxDiv {
+        p {
+            max-width: 266px;
         }
     }
 }

@@ -9,7 +9,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 100px;
+    padding: 25px 20px;
     max-width: 1440px;
     margin: 0 auto;
 
@@ -114,18 +114,6 @@ h3 {
 
 
 // mobile SCSS
-@media (max-width: 1669px) {
-    header {
-        padding: 25px 86px;
-    }
-}
-
-@media (max-width: 1300px) {
-    header {
-        padding: 25px 65px;
-    }
-}
-
 @media (min-width: 1000px) {
     .mobileNav {
         display: none;
@@ -140,22 +128,6 @@ h3 {
     .mobileImg {
         display: block;
         object-fit: cover;
-    }
-
-    header {
-        padding: 25px 48px;
-    }
-}
-
-@media (max-width: 700px) {
-    header {
-        padding: 25px 31px;
-    }
-}
-
-@media (max-width: 500px) {
-    header {
-        padding: 25px 23px;
     }
 }
 

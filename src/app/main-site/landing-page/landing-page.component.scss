@@ -22,7 +22,7 @@
 
 .textLeft {
     transform: rotate(-90deg);
-    font-size: 80px;
+    font-size: 50px;
     color: white;
     font-family: "Poppins", sans-serif;
 }
@@ -35,7 +35,7 @@
 }
 
 .textName {
-    font-size: 77px;
+    font-size: 50px;
     font-weight: 600;
     color: white;
 }
@@ -47,7 +47,7 @@
 
 .introduceDiv {
     margin-bottom: 200px;
-    margin-left: -55px;
+    margin-left: -29px;
 }
 
 .animationDivImg {
@@ -166,16 +166,6 @@
 
 
 // mobile landing-page scss ON
-@media (max-width: 1669px) {
-    .textLeft {
-        font-size: 60px;
-    }
-
-    .textName {
-        font-size: 60px;
-    }
-}
-
 @media (max-width: 1580px) {
     .textLeft {
         font-size: 45px;

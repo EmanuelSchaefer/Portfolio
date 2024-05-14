@@ -5,12 +5,11 @@
 
 .mainFooterContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1440px;
     height: 291px;
-    background-color: rgba(20, 29, 47, 1);
+    background-color: rgb(20, 29, 47);
     color: white;
 }
 
@@ -59,6 +58,14 @@
 
 
 // mobile footer SCSS
+@media (max-width: 1500px) {
+    .mainFooterContainer {
+        width: -webkit-fill-available;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
 @media (max-width: 1000px) {
     .mainFooterContainer {
         display: flex;
@@ -66,6 +73,9 @@
         flex-direction: column;
         align-items: center;
         gap: 15px;
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     h2 {

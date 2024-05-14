@@ -101,7 +101,7 @@
 .lineForImg {
     position: absolute;
     right: 0;
-    width: 450px;
+    width: 190px;
     height: 0;
     border: 2px solid rgba(0, 190, 232, 1);
     margin-top: -225px;
@@ -117,7 +117,7 @@
 }
 
 .profileDiv {
-    margin-right: -120px;
+    margin-right: -380px;
 
     .profileImg {
         max-width: 100%;
@@ -136,26 +136,6 @@
 
 
 // mobile about-me scss ON
-@media (max-width: 1600px) {
-    .lineForImg {
-        width: 300px;
-    }
-
-    .profileDiv {
-        margin-right: -272px;
-    }
-}
-
-@media (max-width: 1350px) {
-    .lineForImg {
-        width: 190px;
-    }
-
-    .profileDiv {
-        margin-right: -380px;
-    }
-}
-
 @media (max-width: 1250px) {
     .profileDiv {
         display: none;

@@ -7,12 +7,12 @@
     <p class="textSelection">{{ translationText.getTranslation('portfolioText') }}</p>
 
     <div class="projectsWrapper">
-        <img class="imgDBlue" src="/assets/img/D. blue 2 P.png">
+        <img class="imgDBlue" src="./assets/img/D. blue 2 P.png">
         <app-projects *ngFor="let projects of portfolio; let i = index" [projectPicture]="projects.projectPicture"
             [projectName]="projects.projectName" [projectLanguages]="projects.projectLanguages"
             [projectDescription]="getProjectDescription(projects.projectDescription)"
             [projectLive]="projects.projectLive" [projectGit]="projects.projectGit" [index]="i">
         </app-projects>
-        <img class="imgLBlue" src="/assets/img/L. blue 2.png">
+        <img class="imgLBlue" src="./assets/img/L. blue 2.png">
     </div>
 </div>
