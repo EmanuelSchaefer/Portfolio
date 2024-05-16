@@ -28,7 +28,7 @@ export class PotfolioComponent {
         EN: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
         DE: 'Aufgabenmanager, inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mittels Drag-and-Drop-Funktionen, und weisen Sie Benutzern und Kategorien zu.',
       },
-      projectLive: 'https://darling-sprinkles-3d5027.netlify.app',
+      projectLive: 'https://join-page.netlify.app',
       projectGit: 'https://github.com/EmanuelSchaefer/Join.git',
     },
     {
@@ -39,7 +39,7 @@ export class PotfolioComponent {
         EN: 'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the endboss chicken.',
         DE: 'Ein einfaches Jump-and-Run-Spiel, basierend auf einem objektorientierten Ansatz. Helfen Sie Pepe, Münzen und Salsabottles zu finden, um gegen das Endboss-Huhn zu kämpfen.',
       },
-      projectLive: 'https://playful-nasturtium-6622fa.netlify.app',
+      projectLive: 'https://el-pollo-loco.netlify.app',
       projectGit: 'https://github.com/EmanuelSchaefer/ElPolloLoco.git',
     },
     {
