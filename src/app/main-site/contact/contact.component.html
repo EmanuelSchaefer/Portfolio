@@ -46,8 +46,9 @@
                         <input type="checkbox" class="checkboxS" name="agreed" formControlName="agreed" required>
                         <p>
                             {{ translationService.getTranslation('privacyPolicyAgreement') }}
-                            <a (click)="dataProtection()">{{ translationService.getTranslation('privacyPolicyLink')
-                                }}</a>
+                            &nbsp;<a (click)="dataProtection()">
+                                {{ translationService.getTranslation('privacyPolicyLink') }}
+                            </a>
                             {{ translationService.getTranslation('andAgree') }}
                         </p>
                     </div>

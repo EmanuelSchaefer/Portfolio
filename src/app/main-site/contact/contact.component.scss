@@ -214,7 +214,7 @@
 
     p {
         display: flex;
-        max-width: 531px;
+        max-width: 360px;
         overflow-wrap: break-word;
         flex-direction: row;
         flex-wrap: wrap;
@@ -232,12 +232,6 @@
 
         textarea {
             width: 350px;
-        }
-    }
-
-    .boxDiv {
-        p {
-            max-width: 266px;
         }
     }
 }
@@ -261,12 +255,6 @@
 
     .lastImgBlue {
         display: none;
-    }
-}
-
-@media (max-width: 770px) {
-    .boxDiv {
-        width: 74vw;
     }
 }
 
@@ -319,6 +307,12 @@
 
         textarea {
             width: 225px;
+        }
+    }
+
+    .boxDiv {
+        p {
+            max-width: 240px;
         }
     }
 
