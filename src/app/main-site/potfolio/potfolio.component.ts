@@ -43,15 +43,15 @@ export class PotfolioComponent {
       projectGit: 'https://github.com/EmanuelSchaefer/ElPolloLoco.git',
     },
     {
-      projectPicture: 'ringoffire-img.png',
-      projectName: 'Ring of Fire',
-      projectLanguages: 'Angular | TypeScript | HTML | CSS | Firebase',
+      projectPicture: 'Pollo loco 4.png',
+      projectName: 'Simple CRM',
+      projectLanguages: 'Angular | Firebase',
       projectDescription: {
-        EN: 'Ring of Fire a Card-based drinking game with rule-assigned actions.',
-        DE: 'Ring of Fire, ein kartenbasiertes Trinkspiel mit zugewiesenen Regeln für Aktionen.',
+        EN: 'A very Simple Customer Relationship Management system working with CRUD functionality.',
+        DE: 'Ein sehr einfaches Customer-Relationship-Management-System, das mit CRUD-Funktionalität arbeitet.',
       },
-      projectLive: 'https://ring-of-fire-game.netlify.app',
-      projectGit: 'https://github.com/EmanuelSchaefer/Ring-of-Fire.git',
+      projectLive: '',
+      projectGit: '',
     }
   ]
 
