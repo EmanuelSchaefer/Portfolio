@@ -28,5 +28,4 @@ export class FooterComponent {
       window.scrollTo(0, 0);
     });
   }
-
 }

@@ -43,12 +43,12 @@ export class PotfolioComponent {
       projectGit: 'https://github.com/EmanuelSchaefer/ElPolloLoco.git',
     },
     {
-      projectPicture: 'Pollo loco 4.png',
-      projectName: 'Simple CRM',
-      projectLanguages: 'Angular | Firebase',
+      projectPicture: 'DABubble.png',
+      projectName: 'DABubble',
+      projectLanguages: 'Angular | TypeScript | Material Design | SCSS',
       projectDescription: {
-        EN: 'A very Simple Customer Relationship Management system working with CRUD functionality.',
-        DE: 'Ein sehr einfaches Customer-Relationship-Management-System, das mit CRUD-Funktionalität arbeitet.',
+        EN: 'A chat messenger app inspired by Slack, allows users to communicate with each other through channels or direct messages.',
+        DE: 'Eine von Slack inspirierte Chat-Messenger-App ermöglicht es Benutzern, über Kanäle oder Direktnachrichten miteinander zu kommunizieren.',
       },
       projectLive: '',
       projectGit: '',
