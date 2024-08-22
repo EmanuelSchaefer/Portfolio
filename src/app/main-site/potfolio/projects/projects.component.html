@@ -1,9 +1,7 @@
-<!--min 4 projekte-->
 <div class="mainProjectsContainer">
     <div class="divLeftRight" id="divLeftRight" [ngClass]="{'reverse': isReverse()}">
         <div class="projectImgDiv">
-            <img class="projectImg" [ngClass]="{'portfolio-img': projectName === 'DABubble'}"
-                src="/assets/img/{{ projectPicture }}">
+            <img src="/assets/img/{{ projectPicture }}">
         </div>
         <div class="projectTextButtonDiv" [ngClass]="{'reverse': isReverse()}">
             <div class="textProjectDiv">
