@@ -48,7 +48,7 @@ export class TranslationService {
         },
         EN: {
             'aboutMe': 'About me', 'portfolio': 'Portfolio', 'LetsTalk': 'Let’s talk!', 'aboutMeTitle': 'About me',
-            'aboutMeText1': 'Hello! My name is Emanuel Schäfer and I\'m a frontend developer. I live in Paraguay. Originally, I am from Ulm, Germany. I take joy in creating things from nothing. Driven by innovation, my goal is to contribute to solutions that are both modern and user-focused.',
+            'aboutMeText1': 'Hello! My name is Emanuel Schäfer and I\'m a frontend developer. I live in Paraguay. Originally, I come from Ulm, Germany. I take joy in creating things from nothing. Driven by innovation, my goal is to contribute to solutions that are both modern and user-focused.',
             'aboutMeText2': 'I learned my skills at the Developer Akademie, where feedback from mentors transformed my passion into precision. This is where I really learned to combine form and function to create accessible and engaging web experiences.',
             'aboutMeText3': 'Beyond the world of code, I find balance and discipline through playing handball. The teamwork, strategy, and resilience required on the pitch also flows into my professional ethics.',
             'mySkillsTitle': 'My Skills',
