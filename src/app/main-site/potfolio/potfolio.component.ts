@@ -29,7 +29,7 @@ export class PotfolioComponent {
         DE: 'Eine von Slack inspirierte Chat-Messenger-App ermöglicht es Benutzern, über Kanäle oder Direktnachrichten miteinander zu kommunizieren.',
       },
       projectLive: '',
-      projectGit: '',
+      projectGit: 'https://github.com/EmanuelSchaefer/DABubble.git',
     },
     {
       projectPicture: 'Pollo loco 1.png',
