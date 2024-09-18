@@ -21,15 +21,15 @@ export class PotfolioComponent {
   // Array that stores the details of each project in the portfolio.
   portfolio: any = [
     {
-      projectPicture: 'dabubbleImg.png',
-      projectName: 'DABubble',
-      projectLanguages: 'Angular | TypeScript | Material Design | SCSS',
+      projectPicture: 'Pictures (PC mock up).png',
+      projectName: 'Join',
+      projectLanguages: 'JavaScript | HTML | CSS',
       projectDescription: {
-        EN: 'A chat messenger app inspired by Slack, allows users to communicate with each other through channels or direct messages.',
-        DE: 'Eine von Slack inspirierte Chat-Messenger-App ermöglicht es Benutzern, über Kanäle oder Direktnachrichten miteinander zu kommunizieren.',
+        EN: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+        DE: 'Aufgabenmanager, inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mittels Drag-and-Drop-Funktionen, und weisen Sie Benutzern und Kategorien zu.',
       },
-      projectLive: '',
-      projectGit: 'https://github.com/EmanuelSchaefer/DABubble.git',
+      projectLive: 'https://join-page.netlify.app',
+      projectGit: 'https://github.com/EmanuelSchaefer/Join.git',
     },
     {
       projectPicture: 'Pollo loco 1.png',
@@ -43,15 +43,15 @@ export class PotfolioComponent {
       projectGit: 'https://github.com/EmanuelSchaefer/ElPolloLoco.git',
     },
     {
-      projectPicture: 'Pictures (PC mock up).png',
-      projectName: 'Join',
-      projectLanguages: 'JavaScript | HTML | CSS',
+      projectPicture: 'dabubbleImg.png',
+      projectName: 'DABubble',
+      projectLanguages: 'Angular | TypeScript | Material Design | SCSS',
       projectDescription: {
-        EN: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-        DE: 'Aufgabenmanager, inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mittels Drag-and-Drop-Funktionen, und weisen Sie Benutzern und Kategorien zu.',
+        EN: 'A chat messenger app inspired by Slack, allows users to communicate with each other through channels or direct messages.',
+        DE: 'Eine von Slack inspirierte Chat-Messenger-App ermöglicht es Benutzern, über Kanäle oder Direktnachrichten miteinander zu kommunizieren.',
       },
-      projectLive: 'https://join-page.netlify.app',
-      projectGit: 'https://github.com/EmanuelSchaefer/Join.git',
+      projectLive: 'https://elias-schaefer.developerakademie.net/dabubble/browser/index.html',
+      projectGit: 'https://github.com/EmanuelSchaefer/DABubble.git',
     }
   ]
 
